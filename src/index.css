@@ -15,22 +15,22 @@ body {
 }
 
 .upper-design {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 300px;
   position: absolute;
-  right: -20%;
-  top: -40%;
+  right: -3%;
+  top: -20%;
   background: #fffad1;
-  border-radius: 50%;
+  border-radius: 69% 31% 48% 52% / 0% 75% 25% 100%;
 }
 .lower-design {
   width: 350px;
   height: 350px;
   position: absolute;
   left: -10%;
-  bottom: -30%;
+  bottom: -25%;
   background: #deebf8;
-  border-radius: 50%;
+  border-radius: 69% 31% 47% 53% / 50% 32% 68% 50%;
 }
 
 /* ----------Initial Page Container---------- */
