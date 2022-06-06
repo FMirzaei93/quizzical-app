@@ -11,7 +11,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: var(--bg);
-  font-family: "Karla", sans-serif;
+  font-family: sans-serif;
 }
 
 .upper-design {
