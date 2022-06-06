@@ -13,9 +13,60 @@ body {
   background-color: var(--bg);
   font-family: "Karla", sans-serif;
 }
-/* Main Container */
 
-main.main-container {
+.upper-design {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  right: -20%;
+  top: -40%;
+  background: #fffad1;
+  border-radius: 50%;
+}
+.lower-design {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  left: -10%;
+  bottom: -30%;
+  background: #deebf8;
+  border-radius: 50%;
+}
+
+/* ----------Initial Page Container---------- */
+div.init-page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+}
+
+div.init-page-container h1 {
+  color: var(--button-text-color);
+  margin: 0;
+  font-size: 40px;
+}
+
+div.init-page-container p {
+  color: var(--button-text-color);
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+div.init-page-container button.start-button {
+  font-size: 30px;
+  padding: 15px 60px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* ----------Data Container---------- */
+
+div.data-container {
   width: 70vw;
   height: 80vh;
   margin: auto;
@@ -25,19 +76,46 @@ main.main-container {
   align-items: center;
 }
 
-/* Check Answer Button */
+/* ----------Buttons---------- */
 
-button.check-button {
+.button {
   background-color: var(--button-border);
   color: white;
   border: none;
   border-radius: 12px;
-  padding: 12px 18px;
-  font-size: 15px;
-  margin-top: 30px;
 }
 
-/* Questions Component*/
+/* Check Answer Button */
+
+button.check-button {
+  margin-top: 30px;
+  padding: 11px 30px;
+  font-size: 15px;
+}
+
+/* Play gain Button */
+
+button.play-again-button {
+  margin-top: 10px;
+  padding: 11px 30px;
+  font-size: 15px;
+}
+
+/* ----------Score Section---------- */
+
+div.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Score text */
+p.score-text {
+  margin-top: 20px;
+}
+
+/* ----------Questions Component---------- */
+
 div.question {
   border-bottom: 1px solid var(--border-bottom);
   padding: 10px 0 13px 0;
@@ -54,12 +132,13 @@ p.question-text {
   font-size: 16px;
   line-height: 19px;
 }
+/* ----------Answers Component---------- */
 
-/* Answers Component*/
 button.answer {
   border: 1px solid var(--button-border);
   border-radius: 12px;
   padding: 7px 15px;
   color: var(--button-text-color);
   font-size: 12px;
+  background-color: #ffffff00;
 }
