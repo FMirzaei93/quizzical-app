@@ -50,11 +50,14 @@ function App() {
           ...item,
           id: nanoid(),
           correct_answer: convertCorrectAnswerToObj(item.correct_answer),
-          incorrect_answers: mapIncorrectAnswers(item.incorrect_answers),
+          incorrect_answers: convertIncorrectAnswersToObjs(
+            item.incorrect_answers
+          ),
           answers: shuffleArray([
-            ...mapIncorrectAnswers(item.incorrect_answers),
+            ...convertIncorrectAnswersToObjs(item.incorrect_answers),
             convertCorrectAnswerToObj(item.correct_answer),
           ]),
+          // A collection of correct and incorrect answers created, then shuffled
         };
       })
     );
@@ -69,7 +72,7 @@ function App() {
     };
   }
 
-  function mapIncorrectAnswers(incorrect_answers_Array) {
+  function convertIncorrectAnswersToObjs(incorrect_answers_Array) {
     return incorrect_answers_Array.map((item) => {
       return {
         value: item,
@@ -97,31 +100,8 @@ function App() {
                     ? { ...answer, isHeld: true }
                     : { ...answer, isHeld: false };
                 }),
-
-                // Another way:
-
-                // if (question.id === questionId) {
-
-                // question.answers.map((answer) => {
-
-                //   return answer.id === answerId
-                //     ? (answer.isHeld = true)
-                //     : (answer.isHeld = false);
-
-                //   //OR
-                //   // if (answer.id === answerId) {
-                //   //   answer.isHeld = true;
-                //   // } else answer.isHeld = false;
-
-                //WRONG approach:
-                //   // answer.id === answerId
-                //   //   ? { ...answer, isHeld: true }
-                //   //   : { ...answer, isHeld: false };
-                // });
               }
             : question;
-
-          // return question; //the output of .map(question) function
         });
 
         //
