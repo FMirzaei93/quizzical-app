@@ -90,7 +90,6 @@ function App() {
   function answerClickHandler(answerId, questionId) {
     !isChecked &&
       setQuestionsArray((prevArray) => {
-        //
         return prevArray.map((question) => {
           return question.id === questionId
             ? {
@@ -103,8 +102,6 @@ function App() {
               }
             : question;
         });
-
-        //
       });
   }
 
