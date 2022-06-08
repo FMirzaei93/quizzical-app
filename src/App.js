@@ -91,10 +91,14 @@ function App() {
         return prevArray.map((question) => {
           if (question.id === questionId) {
             question.answers.map((answer) => {
-              //
-              if (answer.id === answerId) {
-                answer.isHeld = true;
-              } else answer.isHeld = false;
+              return answer.id === answerId
+                ? (answer.isHeld = true)
+                : (answer.isHeld = false);
+
+              //OR
+              // if (answer.id === answerId) {
+              //   answer.isHeld = true;
+              // } else answer.isHeld = false;
 
               // answer.id === answerId
               //   ? { ...answer, isHeld: true }
