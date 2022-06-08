@@ -89,25 +89,39 @@ function App() {
       setQuestionsArray((prevArray) => {
         //
         return prevArray.map((question) => {
-          if (question.id === questionId) {
-            question.answers.map((answer) => {
-              return answer.id === answerId
-                ? (answer.isHeld = true)
-                : (answer.isHeld = false);
+          return question.id === questionId
+            ? {
+                ...question,
+                answers: question.answers.map((answer) => {
+                  return answer.id === answerId
+                    ? { ...answer, isHeld: true }
+                    : { ...answer, isHeld: false };
+                }),
 
-              //OR
-              // if (answer.id === answerId) {
-              //   answer.isHeld = true;
-              // } else answer.isHeld = false;
+                // Another way:
 
-              // answer.id === answerId
-              //   ? { ...answer, isHeld: true }
-              //   : { ...answer, isHeld: false };
-            });
-          }
+                // if (question.id === questionId) {
 
-          //it's the output of .map(question) function
-          return question;
+                // question.answers.map((answer) => {
+
+                //   return answer.id === answerId
+                //     ? (answer.isHeld = true)
+                //     : (answer.isHeld = false);
+
+                //   //OR
+                //   // if (answer.id === answerId) {
+                //   //   answer.isHeld = true;
+                //   // } else answer.isHeld = false;
+
+                //WRONG approach:
+                //   // answer.id === answerId
+                //   //   ? { ...answer, isHeld: true }
+                //   //   : { ...answer, isHeld: false };
+                // });
+              }
+            : question;
+
+          // return question; //the output of .map(question) function
         });
 
         //
