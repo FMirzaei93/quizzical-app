@@ -179,7 +179,7 @@ function App() {
                 answers.
               </p>
               <button className='button play-again-button' onClick={playAgain}>
-                Play again
+                Try again
               </button>
             </div>
           )}
