@@ -1,6 +1,8 @@
 import React from "react";
 import Question from "./components/Question";
 import { nanoid } from "nanoid";
+import upper from "./images/upper.png";
+import lower from "./images/lower.png";
 
 function App() {
   const [hasStarted, setHasStarted] = React.useState(false);
@@ -138,7 +140,7 @@ function App() {
     return num;
   }
 
-  function playAgain() {
+  function tryAgain() {
     setIsFetched(false);
     fetchData();
   }
@@ -148,44 +150,45 @@ function App() {
   }
 
   return (
-    <main className='main-container'>
-      <div className='upper-design'></div>
-      <div className='lower-design'></div>
-
-      {!hasStarted ? (
-        <div className='init-page-container'>
-          <h1>Quizzical</h1>
-          <p>Take a quiz in different categories</p>
-          <button className='button start-button' onClick={startTheGame}>
-            Start quiz
-          </button>
-        </div>
-      ) : (
-        <div className='data-container'>
-          <div> {questionsArray && questionComponentsArray}</div>
-          {!isChecked ? (
-            isFetched && (
-              <button
-                className='button check-button'
-                onClick={checkAnswersButton}
-              >
-                Check answers
-              </button>
-            )
-          ) : (
-            <div className='score'>
-              <p className='score-text'>
-                You scored {correctAnswersNum()}/{questionsArray.length} correct
-                answers.
-              </p>
-              <button className='button play-again-button' onClick={playAgain}>
-                Try again
-              </button>
-            </div>
-          )}
-        </div>
-      )}
-    </main>
+    <div className='container'>
+      <img src={upper} className='upper-img' />
+      <img src={lower} className='lower-img' />
+      <main>
+        {!hasStarted ? (
+          <div className='init-page-container'>
+            <h1>Quizzical</h1>
+            <p>Take a quiz in different categories</p>
+            <button className='button start-button' onClick={startTheGame}>
+              Start quiz
+            </button>
+          </div>
+        ) : (
+          <div className='data-container'>
+            <div> {questionsArray && questionComponentsArray}</div>
+            {!isChecked ? (
+              isFetched && (
+                <button
+                  className='button check-button'
+                  onClick={checkAnswersButton}
+                >
+                  Check answers
+                </button>
+              )
+            ) : (
+              <div className='score'>
+                <p className='score-text'>
+                  You scored {correctAnswersNum()}/{questionsArray.length}{" "}
+                  correct answers.
+                </p>
+                <button className='button try-again-button' onClick={tryAgain}>
+                  Try again
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+      </main>
+    </div>
   );
 }
 

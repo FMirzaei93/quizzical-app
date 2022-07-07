@@ -10,27 +10,26 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--bg);
   font-family: sans-serif;
 }
 
-.upper-design {
-  width: 400px;
-  height: 300px;
-  position: absolute;
-  right: -3%;
-  top: -20%;
-  background: #fffad1;
-  border-radius: 69% 31% 48% 52% / 0% 75% 25% 100%;
+div.container {
+  position: relative;
+  min-height: 100vh;
 }
-.lower-design {
-  width: 350px;
-  height: 350px;
+
+img.upper-img {
   position: absolute;
-  left: -10%;
-  bottom: -25%;
-  background: #deebf8;
-  border-radius: 69% 31% 47% 53% / 50% 32% 68% 50%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+img.lower-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /* ----------Initial Page Container---------- */
@@ -41,7 +40,6 @@ div.init-page-container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg);
 }
 
 div.init-page-container h1 {
@@ -67,12 +65,12 @@ div.init-page-container button.start-button {
 /* ----------Data Container---------- */
 
 div.data-container {
-  width: 70vw;
-  height: 80vh;
+  max-width: 90%;
   margin: auto;
-  margin-top: 40px;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -93,9 +91,9 @@ button.check-button {
   font-size: 15px;
 }
 
-/* Play gain Button */
+/* Try gain Button */
 
-button.play-again-button {
+button.try-again-button {
   margin-top: 10px;
   padding: 11px 30px;
   font-size: 15px;
@@ -123,6 +121,7 @@ div.question {
 
 div.answers {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
