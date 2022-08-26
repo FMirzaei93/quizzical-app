@@ -7,24 +7,24 @@ export default function Question(props) {
   //        key
   //        question
   //        answers
-  //        id
+  //        questionId
   //        clickHandler
   //        isChecked
 
-  const answerComponentsArray = props.answers.map((item) => (
+  const answerComponentsArray = props.answers.map((answer) => (
     <Answer
-      key={item.id}
-      value={item.value}
-      isHeld={item.isHeld}
-      isCorrect={item.isCorrect}
-      clickHandler={() => props.clickHandler(item.id, props.id)}
+      key={answer.id}
+      value={answer.value}
+      isHeld={answer.isHeld}
+      isCorrect={answer.isCorrect}
+      clickHandler={() => props.clickHandler(answer.id, props.questionId)}
       isChecked={props.isChecked}
     />
   ));
 
   return (
     <div className='question'>
-      <p className='question-text'>{unEscape(props.question)}</p>
+      <p className='question-text'>{unEscape(props.questionId)}</p>
       <div className='answers'>{answerComponentsArray}</div>
     </div>
   );
