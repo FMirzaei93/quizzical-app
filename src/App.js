@@ -26,7 +26,7 @@ function App() {
         }
         return response.json();
         //The json() method of the Response interface takes a Response stream and reads it to completion. It returns a promise which resolves with the result of parsing the body text as JSON.
-        //Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.
+        //Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.(it's actually the json.parse())
       })
       .then((data) => createObjArray(data.results))
       .then((objsArray) => {
@@ -53,15 +53,10 @@ function App() {
         return {
           ...item,
           id: nanoid(),
-          correct_answer: convertCorrectAnswerToObj(item.correct_answer),
-          incorrect_answers: convertIncorrectAnswersToObjs(
-            item.incorrect_answers
-          ),
           answers: shuffleArray([
             ...convertIncorrectAnswersToObjs(item.incorrect_answers),
             convertCorrectAnswerToObj(item.correct_answer),
           ]),
-          // A collection of correct and incorrect answers created, then shuffled
         };
       })
     );
@@ -117,7 +112,7 @@ function App() {
           key={item.id}
           question={item.question}
           answers={item.answers}
-          id={item.id}
+          questionId={item.id}
           clickHandler={answerClickHandler}
           isChecked={isChecked}
         />
