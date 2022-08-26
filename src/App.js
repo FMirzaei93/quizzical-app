@@ -95,7 +95,7 @@ function App() {
                 ...question,
                 answers: question.answers.map((answer) => {
                   return answer.id === answerId
-                    ? { ...answer, isHeld: true }
+                    ? { ...answer, isHeld: !answer.isHeld }
                     : { ...answer, isHeld: false };
                 }),
               }
