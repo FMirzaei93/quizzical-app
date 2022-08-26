@@ -2,6 +2,9 @@
 
 It's a quiz app using React library.
 The user will receive five questions of different categories each time, choose the correct answer and check the quiz with the click of a button.
+
+![alt text](https://github.com/FMirzaei93/quizzical-app/blob/master/src/images/quizzical.png)
+
 #### You can see the live version of the project [here](http://quizzical-app-fmirzaei93.vercel.app)
 
 
